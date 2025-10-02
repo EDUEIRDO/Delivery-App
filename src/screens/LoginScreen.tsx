@@ -61,6 +61,7 @@ export default function LoginScreen() {
             onChangeText={setPassword}
         />
         <DefaultButton title="Login" onPress={handleLogin} />
+        <DefaultButton title="Home" onPress={() => navigation.navigate('Home')} />
         </View>
     );
 }
