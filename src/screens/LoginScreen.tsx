@@ -7,10 +7,7 @@ import { validateEmail, validatePassword } from "../utils/validators";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../navigation/Navigator";
 
-import {
-  createStaticNavigation,
-  useNavigation,
-} from '@react-navigation/native';
+import { createStaticNavigation, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 type LoginScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Login'>;
@@ -62,6 +59,8 @@ export default function LoginScreen() {
         />
         <DefaultButton title="Login" onPress={handleLogin} />
         <DefaultButton title="Home" onPress={() => navigation.navigate('Home')} />
+        <DefaultButton title="Management" onPress={() => navigation.navigate('Management')}/>
+        <DefaultButton title="ProductList" onPress={() => navigation.navigate('ProductList')}/>
         </View>
     );
 }

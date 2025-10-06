@@ -1,18 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, FlatList, StyleSheet, TextInput } from "react-native";
 import { DefaultButton } from "../components/DefaultButton";
-
-type User = {
-    id: number;
-    name: string;
-    email: string;
-};
+import User from "../types/user";
 
 export default function UserManagementScreen() {
     const [users, setUsers] = useState<User[]>([]);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const API_URL: string = 'http://192.168.0.104:8080';
 
     // const fetchUsers = async () => {
@@ -45,15 +41,15 @@ export default function UserManagementScreen() {
 
             // Insert users in database
     async function handleSubmit() {
-        if (!name || !email) {
+        if (!name || !email || !password) {
             console.warn("Please fill in all entries");
             return;
         }
         try {
-            const response = await fetch(`${API_URL}/users`, {
+            const response = await fetch(`${API_URL}/register`, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({ name, email }),
+                body: JSON.stringify({ name, email, password }),
             });
             if (!response.ok) throw new Error("Error saving user");
 
@@ -65,6 +61,7 @@ export default function UserManagementScreen() {
             // Clean inputs
             setName("");
             setEmail("");
+            setPassword("");
 
         } catch(error) {
             console.error("Error creating user: ", error);
@@ -80,35 +77,35 @@ export default function UserManagementScreen() {
             });
             if (!response.ok) throw new Error("Error deleting user");
             setUsers((prev) => prev.filter((user) => user.id !== id));
-        } catch(error) {
-            console.error("Error in function handleDelete", error);
-        }
+        } catch(err) {
+            console.error("Error in function handleDelete", err);
+        };
     };
 
-    async function handleVerification() {
-        if (!name || !email) {
-            console.warn("Please fill in all entries");
-            try {
-                const response = await fetch(`${API_URL}/users`, {
-                    headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({ name, email }),
-                })
-                if (!response.ok) throw new Error("Error verificating user");
+    // async function handleVerification() {
+    //     if (!name || !email) {
+    //         console.warn("Please fill in all entries");
+    //         try {
+    //             const response = await fetch(`${API_URL}/users`, {
+    //                 headers: {'Content-Type': 'application/json'},
+    //                 body: JSON.stringify({ name, email }),
+    //             })
+    //             if (!response.ok) throw new Error("Error verificating user");
 
-            } catch(error) {
+    //         } catch(error) {
 
-            }
-        }
+    //         }
+    //     }
 
-    }
+    // }
 
-    if (loading) {
-        return (
-            <View style={styles.center}>
-                <Text>Loading...</Text>
-            </View>
-        );
-    }
+    // if (loading) {
+    //     return (
+    //         <View style={styles.center}>
+    //             <Text>Loading...</Text>
+    //         </View>
+    //     );
+    // }
 
     return (
         <View>
@@ -124,6 +121,12 @@ export default function UserManagementScreen() {
                 value={email}
                 onChangeText={setEmail}
             />
+            <TextInput
+                style={styles.input}
+                placeholder="Password"
+                value={password}
+                onChangeText={setPassword}
+            />
             <DefaultButton title="Submit" onPress={handleSubmit} />
 
             {/* list */}
@@ -132,11 +135,11 @@ export default function UserManagementScreen() {
                 <View style={styles.card}>
                     <Text style={styles.name}>{item.name}</Text>
                     <Text style={styles.email} >{item.email}</Text>
+                    <Text >{item.id}</Text>
                     <DefaultButton title="Delete" onPress={() => handleDelete(item.id)} />
                 </View>
             )}/>
         </View>
-
     );
 }
 

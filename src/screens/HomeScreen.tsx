@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { Text, StyleSheet, View, FlatList } from "react-native";
+import { View, Text, FlatList, StyleSheet, TextInput } from "react-native";
 import { DefaultButton } from "../components/DefaultButton";
 import { SafeAreaView } from "react-native-safe-area-context";
+
+
 
 const DATA = [
     {
@@ -30,7 +32,6 @@ const Item = ({title}: ItemProps) => {
 
 
 export default function HomeScreen() {
-    // const [count, setCount] = useState(0);
 
     return (
         <View style={styles.container}>
@@ -39,9 +40,6 @@ export default function HomeScreen() {
                 renderItem={({item}) => <Item title={item.title} />}
                 keyExtractor={item => item.id}
             />
-            {/* <Text style={styles.title}>Hello World!</Text>
-            <Text style={styles.counter}>Vc clicou {count} vezes!</Text>
-            <DefaultButton title="Clique aqui" onPress={() => setCount(count + 1)}/> */}
         </View>
     );
 };

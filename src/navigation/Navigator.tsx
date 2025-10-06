@@ -7,13 +7,16 @@ import { StatusBar, useColorScheme, StyleSheet, Text } from 'react-native';
 import HomeScreen from '../screens/HomeScreen';
 import UserManagementScreen from "../screens/UserManagementScreen";
 import LoginScreen from "../screens/LoginScreen";
+import ProductRegisterScreen from "../screens/ProductRegisterScreen";
 import { AuthProvider } from "../context/AuthContext";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-export type RootStackParamList = {
+export type RootStackParamList = { 
   Login: undefined;
   Home: undefined;
+  Management: undefined;
+  ProductList: undefined;
 };
 
 // Para que o react-navigation do tipo Stack funcione, definimos um type como lista de parametros das Screens que existem
@@ -35,6 +38,8 @@ export function RootStack() {
           <Stack.Navigator initialRouteName="Login">
             <Stack.Screen name="Login" component={LoginScreen} />
             <Stack.Screen name="Home" component={HomeScreen}/>
+            <Stack.Screen name="Management" component={UserManagementScreen} />
+            <Stack.Screen name="ProductList" component={ProductRegisterScreen} />
           </Stack.Navigator>
         </AuthProvider>
       </NavigationContainer>
