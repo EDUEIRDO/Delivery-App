@@ -17,13 +17,13 @@ export default function App() {
       </SafeAreaView>
     </SafeAreaProvider>
   );
+}
 
   // return (
   //   <AuthProvider>
   //     <AppNavigator />
   //   </AuthProvider>
   // );
-}
 
 //   return (
 //     <SafeAreaProvider>

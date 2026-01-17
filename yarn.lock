@@ -1503,7 +1503,7 @@
   dependencies:
     joi "^17.2.1"
 
-"@react-native-community/cli@20.0.0":
+"@react-native-community/cli@^20.0.0":
   version "20.0.0"
   resolved "https://registry.npmjs.org/@react-native-community/cli/-/cli-20.0.0.tgz"
   integrity sha512-/cMnGl5V1rqnbElY1Fvga1vfw0d3bnqiJLx2+2oh7l9ulnXfVRWb5tU2kgBqiMxuDOKA+DQoifC9q/tvkj5K2w==
@@ -1727,7 +1727,7 @@
 
 "@react-navigation/elements@^2.6.4":
   version "2.6.4"
-  resolved "https://registry.yarnpkg.com/@react-navigation/elements/-/elements-2.6.4.tgz#f1dc8548b1289588fabcd2f0342c1391c689a49f"
+  resolved "https://registry.npmjs.org/@react-navigation/elements/-/elements-2.6.4.tgz"
   integrity sha512-O3X9vWXOEhAO56zkQS7KaDzL8BvjlwZ0LGSteKpt1/k6w6HONG+2Wkblrb057iKmehTkEkQMzMLkXiuLmN5x9Q==
   dependencies:
     color "^4.2.3"
@@ -1736,7 +1736,7 @@
 
 "@react-navigation/native-stack@^7.3.26":
   version "7.3.26"
-  resolved "https://registry.yarnpkg.com/@react-navigation/native-stack/-/native-stack-7.3.26.tgz#a08ee0626e49428a808da9d810f24db5b08deae9"
+  resolved "https://registry.npmjs.org/@react-navigation/native-stack/-/native-stack-7.3.26.tgz"
   integrity sha512-EjaBWzLZ76HJGOOcWCFf+h/M+Zg7M1RalYioDOb6ZdXHz7AwYNidruT3OUAQgSzg3gVLqvu5OYO0jFsNDPCZxQ==
   dependencies:
     "@react-navigation/elements" "^2.6.4"
@@ -1744,7 +1744,7 @@
 
 "@react-navigation/native@^7.1.17":
   version "7.1.17"
-  resolved "https://registry.yarnpkg.com/@react-navigation/native/-/native-7.1.17.tgz#88d557c0f5000aa2741e4368c59719526f1394c4"
+  resolved "https://registry.npmjs.org/@react-navigation/native/-/native-7.1.17.tgz"
   integrity sha512-uEcYWi1NV+2Qe1oELfp9b5hTYekqWATv2cuwcOAg5EvsIsUPtzFrKIasgUXLBRGb9P7yR5ifoJ+ug4u6jdqSTQ==
   dependencies:
     "@react-navigation/core" "^7.12.4"
@@ -5411,7 +5411,7 @@ react-devtools-core@^6.1.5:
 
 react-freeze@^1.0.0:
   version "1.0.4"
-  resolved "https://registry.yarnpkg.com/react-freeze/-/react-freeze-1.0.4.tgz#cbbea2762b0368b05cbe407ddc9d518c57c6f3ad"
+  resolved "https://registry.npmjs.org/react-freeze/-/react-freeze-1.0.4.tgz"
   integrity sha512-r4F0Sec0BLxWicc7HEyo2x3/2icUTrRmDjaaRyzzn+7aDyFZliszMDOgLVwSnQnYENOlL1o569Ze2HZefk8clA==
 
 react-is@^16.13.1:
@@ -5431,7 +5431,7 @@ react-is@^19.1.0:
 
 react-native-is-edge-to-edge@^1.2.1:
   version "1.2.1"
-  resolved "https://registry.yarnpkg.com/react-native-is-edge-to-edge/-/react-native-is-edge-to-edge-1.2.1.tgz#64e10851abd9d176cbf2b40562f751622bde3358"
+  resolved "https://registry.npmjs.org/react-native-is-edge-to-edge/-/react-native-is-edge-to-edge-1.2.1.tgz"
   integrity sha512-FLbPWl/MyYQWz+KwqOZsSyj2JmLKglHatd3xLZWskXOpRaio4LfEDEz8E/A6uD8QoTHW6Aobw1jbEwK7KMgR7Q==
 
 react-native-safe-area-context@^5.5.2:
@@ -5441,7 +5441,7 @@ react-native-safe-area-context@^5.5.2:
 
 react-native-screens@^4.16.0:
   version "4.16.0"
-  resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-4.16.0.tgz#efa42e77a092aa0b5277c9ae41391ea0240e0870"
+  resolved "https://registry.npmjs.org/react-native-screens/-/react-native-screens-4.16.0.tgz"
   integrity sha512-yIAyh7F/9uWkOzCi1/2FqvNvK6Wb9Y1+Kzn16SuGfN9YFJDTbwlzGRvePCNTOX0recpLQF3kc2FmvMUhyTCH1Q==
   dependencies:
     react-freeze "^1.0.0"
